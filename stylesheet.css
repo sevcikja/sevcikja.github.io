@@ -1,0 +1,218 @@
+
+* {margin: 0;
+  padding: 0; text-decoration: none; font-family: Helvetica; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 100; line-height: 18px;}
+h3 {font-family: Helvetica; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; line-height: 18px;}
+
+
+  /* Hier zuerst das Design für index.html die hier die vorgeschaltete Sprachwahl ist*/
+
+  @media screen and (max-width: 599px) {
+            #indexgrid {display: grid;
+              grid-template-rows: 4fr 2fr 2fr 1fr;
+             }
+             #ih1 {grid-row-start:1 ; grid-row-end: 2;background-color: #99CCFF;}
+             #ih1 > img {object-fit: contain; width: 100%; max-height: 100%}
+             #DE {margin-top: 10%;grid-row-start: 2; grid-row-end: 3;
+                  display: flex; justify-content: center; align-items: center;
+                  background-color:#99CCFF ;}
+                #DE > a {text-decoration: none; font-family: helvetica; font-weight: lighter; color: white; font-size: 30pt;}
+              #EN {margin-top: 10%;grid-row-start: 3; grid-row-end: 4;display: flex; justify-content: center; align-items: center; background-color: #99CCFF;}
+                #EN > a {text-decoration: none; font-family: helvetica; font-weight:lighter; color: white;font-size: 30pt;}
+             #indeximpressum {grid-row-start: 4; grid-row-end:5;
+                display: grid; grid-template-columns: auto 40% auto; background-color: #99CCFF;}
+             #verband {grid-column-start: 1; grid-column-end: 2;display: flex; justify-content: center; align-items: center; }
+             #verband > img {padding:3%; object-fit: contain; width: 100%; max-height: 100%; opacity: 80%;}
+             #impr {grid-column-start: 3; grid-column-end: 4;display: flex; justify-content: center; align-items: center; }
+             #impr > a {padding:3%;text-decoration: none; font-family: helvetica; font-weight: bold; color: white;}
+           }
+@media screen and (min-width: 600px) {#indexgrid {margin-top: 2em; display: grid;
+                                      grid-template-columns: auto 600px auto;
+                                        grid-template-rows: 4fr 2fr 1fr;
+                                      }
+                                      #ih1 {grid-column-start: 2; grid-column-end: 3;background-color: #99CCFF;}
+                                      #ih1 > img {object-fit: fill; width: 100%; max-height: 100%;}
+                                      #indexnavi {grid-column-start: 2; grid-column-end: 3; grid-row-start: 2; grid-row-end: 3;
+                                                  display: grid;
+                                                  grid-template-columns: 50% 50%;
+                                                  background: rgba(153,204,255,60%);}
+                                                  #DE {display: flex; justify-content: center; align-items: center;}
+                                                  #DE > a {text-decoration: none; font-family: helvetica; font-weight: lighter; color: white; font-size: 30pt;}
+                                                  #EN {display: flex; justify-content: center; align-items: center;}
+                                                  #EN > a {text-decoration: none; font-family: helvetica; font-weight:lighter; color: white;font-size: 30pt;}
+                                                  #indeximpressum {grid-column-start: 2; grid-column-end: 3; grid-row-start: 3; grid-row-end: 4;
+                                                                  display: grid; grid-template-columns: auto 40% auto; background-color: #99CCFF;}
+                                                  #verband {grid-column-start: 1; grid-column-end: 2;display: flex; justify-content: center; align-items: center; }
+                                                  #verband > img {padding:3%; object-fit: contain; width: 100%; max-height: 100%; opacity: 80%;}
+                                                  #impr {grid-column-start: 3; grid-column-end: 4;display: flex; justify-content: center; align-items: center; }
+                                                  #impr > a {padding:3%;text-decoration: none; font-family: helvetica; font-weight: bold; color: white;}
+                                                }
+/*____________________BEGINN HAUPTSEITE____________*/
+/*_________________________________________________*/
+
+
+/*_______________GRID & MEDIA QUERIES____________*/
+
+@media screen and (max-width: 700px) {   /*Bei Skalierung unterhalb der Größe des Zentrierten Blocks nur noch eine Spalte*/
+  .maingrid {display: grid;
+            grid-template-columns: 100vw;
+            grid-template-rows: auto 3em auto 3em;
+            grid-row-gap: 0.7em;
+            grid-column-gap: 0.7em;
+            grid-template-areas: "hd"
+                                 "nv"
+                                 "ct"
+                                 "ft"}
+ body {background-image: url(background.svg); background-attachment: fixed; background-size: cover;}
+/* HEADER _____________________________________________________________________*/
+    header {grid-area: hd;
+            display: grid;
+     grid-template-columns: 50% 50%;
+     grid-template-rows: 70% 30%;
+     grid-template-areas: "uk uk"
+                          "zw dr";
+     grid-row-gap: 0;
+     grid-column-gap: 0;
+     background-color: #99CCFF;
+       }
+#eins {grid-area: uk; min-width: 100%;}
+#eins > img {object-fit: ; width: 100%; max-height: 100%}
+#zwei {grid-area: zw;}
+#zwei > img {object-fit: fill; width: 100%; max-height: 100%}
+#drei {grid-area: dr;}
+#drei > img {object-fit: fill; width: 100%; max-height: 100%}
+
+
+/* NAVIGATION// Sprachwahl____________________________________________________ */
+     .navigrid {grid-area: nv; position: sticky; top: 0.7em;
+                display: grid; grid-auto-columns: 40% 20% minmax(50px,1fr) minmax(50px,1fr);
+                grid-template-areas: "KO . DE EN";
+                grid-row-gap: 1vw;
+                font-size: 70%;
+                opacity: 70%;}
+
+               #kontaktDE {grid-area: KO;display: flex; justify-content: center; align-items: center; background-color: #99CCFF;}
+               #kontaktDE a {text-decoration: none; font-family: helvetica; font-weight: bold; color: #FF6666;}
+               #languageselectorDE {grid-area: DE;display: flex; justify-content: center; align-items: center; background-color: #99CCFF;}
+               #languageselectorDE a {text-decoration: none; font-family: helvetica; font-weight: bold; color: white;}
+               #languageselectorEN {grid-area: EN;display: flex; justify-content: center; align-items: center; background-color: #CCCCCC;}
+               #languageselectorEN a {text-decoration: none; font-family: helvetica; font-weight: bold; color: white;}
+
+ /* CONTENT____________________*/
+       .content {grid-area: ct; padding: 0px; margin: 0px;
+                 display: grid;
+                 grid-template-rows: 40vh 50%;
+                 grid-template-areas: "pic"
+                                       "ct2"}
+
+       #portrait {grid-area: pic; min-width: 100%;}
+       #portrait img {margin-left: 10%;margin-right: 10%; object-fit:cover; width: 80%; max-height: 100%;}
+       #leistungen {grid-area: ct2;text-align: justify;}
+       h1 {margin-top: 0.3em; font-family: Helvetica; font-weight:400;font-style: normal;
+           font-size: 25pt; line-height: 100%; color: #333333;}
+       h2 {font-family: Helvetica; font-size: 18pt; font-weight: 400; line-height: 35px; color: #333333;}
+     p {font-family: Helvetica; font-weight: 100;font-style: normal;font-size: 14px; line-height: 20px;/*color: #333333;*/}
+
+     #intro {margin-top: 1.5em;}
+     #impressumsid {margin: 0.7em; grid-row-start: 1; grid-row-end: 3; text-align: justify;}
+
+     #form {margin: 0.7em; padding:0.7em; border-style: solid; border-color: #CCCCCC; border-width: 2pt;
+           line-height: 40px;}
+     #text {min-width:70%; min-height: 40%;}
+     .text1 {margin-top: 0.7em; padding: 0.7em; background: rgba(255,255,255,40%)}
+
+
+/*__________________________FOOTER__________________________*/
+
+     #footer {position: fixed; bottom: 0.7em; margin-left: 70%; margin-right: 0.7em;
+              background-color: #CCCCCC;
+               display: flex;
+               opacity: 70%;}
+     #footer a {justify-content: center;align-items: center;
+               margin: 0.7em 0.7em 0.7em 0.7em;
+               text-decoration: none;font-family: helvetica; font-weight: bold; color: white;}
+                               }
+
+
+/*_____________________________DESKTOP________________________________________________*/
+/*____________________________________________________________________________________*/
+
+@media screen and (min-width: 701px) {.maingrid {
+           display: grid;
+           grid-template-columns: auto minmax(701px, 900px) auto;
+           grid-template-rows: auto 3em auto 3em;
+           grid-template-areas: "left hd right"
+                                "left nv right"
+                                "left ct right"
+                                "ft ft ft"}
+body {background-image: url(background.svg); background-attachment: fixed; background-size: cover;}
+.left {grid-area: left; background-color: /*#CCCCCC; opacity: 30%;*/}
+.right {grid-area: right;background-color: /*#CCCCCC; opacity: 30%;*/}
+
+
+
+/*____________________HEADER_________________*/
+
+header {position: sticky; top: -115px;grid-area: hd;
+      display: grid;
+      grid-template-columns: 70% 30%;
+      grid-template-rows: 50% 50%;
+      grid-template-areas: "uk zw"
+                           "uk dr";
+      grid-row-gap: 0;
+      grid-column-gap: 0;
+      background-color: #99CCFF;
+        }
+#eins {grid-area: uk;}
+#eins > img {object-fit: fill; width: 100%; max-height: 100%;}
+#zwei {grid-area: zw;margin-top: 0.7em; }
+#zwei > img {object-fit: fill; width: 100%; max-height: 100%}
+#drei {grid-area: dr;margin-top: 0.7em; /*background-color: #CCCCCC;*/}
+#drei > img {object-fit: fill; width: 100%; max-height: 100%}
+
+
+/*___________NAVIGATION// Sprachwahl_________________*/
+.navigrid {grid-area: nv; margin: 0.7em; position: sticky; top: 120px; opacity:80%;
+           display: grid; grid-auto-columns: 20% auto 70px 70px 307px;
+           grid-template-areas: "KO . DE EN .";
+           grid-row-gap: 1vw;
+           font-size: 70%;
+
+          }
+
+#kontaktDE {grid-area: KO;display: flex; justify-content: center; align-items: center; background-color: #FF6666;}
+  #kontaktDE a {text-decoration: none; font-family: helvetica; font-weight: bold; color: white;}
+  #languageselectorDE {grid-area: DE;display: flex; justify-content: center; align-items: center; background-color: #99CCFF;}
+  #languageselectorDE a {text-decoration: none; font-family: helvetica; font-weight: bold; font-size: 70%; color: white;}
+
+  #languageselectorEN {grid-area: EN;display: flex; justify-content: center; align-items: center; background-color: #CCCCCC;}
+  #languageselectorEN a {text-decoration: none; font-family: helvetica; font-weight: bold; font-size: 70%; color: white;}
+
+/*________________________CONTENT____________________*/
+.content {grid-area: ct; min-height: 100vh; display: flex;}
+    #portrait {max-width: 60%;margin-right: 0.7em; margin-left: 0.7em;padding-top: 0.7em;}
+    #portrait img {object-fit:cover; width: 100%; max-height: 100%;}
+    #leistungen {max-width: 60%; text-align: justify;}
+  h1 {margin-top: 0.3em; font-family: Helvetica; font-weight:400;font-style: normal;
+      font-size: 30pt; line-height: 100%; color: #333333;}
+  h2 {font-family: Helvetica; font-size: 18pt; font-weight: 400; line-height: 35px; color: #333333;}
+p {font-family: Helvetica; font-weight: 100;font-style: normal;font-size: 14px; line-height: 18px;/*color: #333333;*/}
+
+  #intro {padding-top: 1.4em;}
+ .text1 {margin-top: 0.7em; padding: 2.4em; background: rgba(255,255,255,40%);}
+ #impressumsid {margin: 0.7em; text-align: justify;}
+  .contact {min-height: 100vh;grid-area: ct; margin-left: 0.7em;}
+  #form {margin-right:0.7em; padding:0.7em; border-style: solid; border-color: #FF6666; border-width: 1pt;
+      line-height: 40px;}
+      #text {min-width:70%; min-height: 40%;}
+/*__________________________FOOTER__________________________*/
+
+#footer {position: fixed; bottom: 0px; background-color: #CCCCCC;
+          display: grid;
+          grid-template-columns: 80vw 20vw;
+          grid-template-rows: 1.5em 1.5em;
+          opacity: 70%;}
+#footer a {grid-column: 2/3;grid-row: 1/3; display: flex; justify-content: center;align-items: center;
+          margin: 0.7em 0.7em 0.7em 0.7em;
+          text-decoration: none;font-family: helvetica; font-weight: bold; color: white; font-size: 75%;}
+
+        }

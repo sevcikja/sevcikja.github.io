@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr"> <!-- Was noch hinzufügen für Barrierefreiheit?-->
+  <head>
+    <meta charset="utf-8">
+    <title> Ursula Kreuzpaintner - staatlich geprüfte Übersetzerin - Start</title>
+    <link rel="stylesheet" href="stylesheet.css"/>  <!-- stylsheet-->
+  </head>
+
+  <body id="contact">
+    <div class="maingrid"> <!-- Container für das CSS GRID-LAYOUT--->
+
+      <div class="left">
+      </div>
+
+      <div class="right">
+      </div>
+
+<!--____________________HEADER_________________-->
+
+        <header>
+              <div id="eins"><a href="homeDE.html"> <img src="Header/eins.svg"> </a></div> <!-- hier jeweils auf aktuelle SPrache achten!-->
+              <div id="zwei"> <img src="Header/zwei.svg"> </div>
+              <div id="drei"> <img src="Header/drei.svg"> </div>
+        </header>
+
+<!-- ___________NAVIGATION_________________-->
+        <div class=navigrid>
+            <div id="kontaktDE"><a href="homeDE.html" class="a5">Start</a>
+            </div>
+            <div id="languageselectorDE"><a href="homeDE.html">deutsch</a> <!--Sprachauswahl-->
+            </div>
+            <div id="languageselectorEN"><a href="homeEN.html">english</a> <!--Sprachauswahl-->
+            </div>
+        </div>
+
+<!--________________________CONTENT____________________--->
+
+      <div class="contact">
+        <div class="text1">
+        <h1>Kontakt</h1> <br>
+        <p> Ich freue mich über Ihre Anfrage!
+          <br>
+          Nachrichten werden schnellstmöglich beantwortet.</p>
+        <br>
+
+
+          <div id="form"> <!-- Formular von Formularchef.de, momentan eine Vorschau -->
+
+            <!-- Das Formular beginnt hier, die folgende Zeile NICHT ändern: -->
+            <form action="http://www.formular-chef.de/fc.cgi" method="post" enctype="multipart/form-data">
+
+              <!-- Wir definieren einen festen Betreff: -->
+              <input type="hidden" name="betreff" value="Sie haben eine neue Nachricht von einem Besucher!">
+              <!-- Der URL zum Antwortseiten-Template: -->
+              <input type="hidden" name="template_antwort" value="http://">
+              <!-- Der URL zum Fehlerseiten-Template: -->
+              <input type="hidden" name="template_fehler" value="http://">
+
+              <!-- Hier beginnen die Formular-Felder, die dem Besucher angezeigt werden: -->
+
+
+              <label for="Anrede">Anrede/ Title</label>:
+              <select id="Anrede" name="Anrede" size="1">
+                <option>Herr/ Mr</option>
+                <option>Frau/ Ms</option>
+                <option>divers</option>
+                <option>Firma</option>
+              </select> <br>
+
+              <label for="Nachname">Name/ Surname</label>
+              <input name="Nachname" id="Nachname"> <br>
+
+              <label for="empfaenger">E-Mail:</label>
+              <input name="empfaenger" id="empfaenger"> <br>
+
+              <label for="text">Ihre Nachricht/ Your Message:</label>
+              <textarea name="text" id="text"></textarea>
+              <input type="submit" value="Senden">
+          </form>
+          <br>
+        </div>
+      </div>
+
+      </div>
+
+
+<!--__________________________FOOTER__________________________-->
+
+    <div id="footer">
+      <a id="impressum" href="impressum.html">Impressum und Datenschutz</a>
+    </div>
+</div>
+</body>
+
+</html>
